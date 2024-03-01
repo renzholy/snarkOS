@@ -467,7 +467,7 @@ impl Start {
         let num_cores = num_cpus::get();
 
         let (num_tokio_worker_threads, max_tokio_blocking_threads, num_rayon_cores_global) =
-            { (num_cores, num_cores * 8, num_cores) };
+            { (num_cores, num_cores * 64, num_cores) };
 
         // Initialize the parallelization parameters.
         rayon::ThreadPoolBuilder::new()
